@@ -1,0 +1,79 @@
+
+
+#ifndef __COLOR__H__INCLUDE__
+#define __COLOR__H__INCLUDE__
+
+
+#include "config.h"
+
+
+#ifdef USE_CONSOLE_COLOR
+
+#   define CONSOLE_COLOR_RESET          "\033[0m"
+#   define CONSOLE_COLOR_CLEAR          "\033[1;38m"
+    
+#   define CONSOLE_COLOR_BLACK          "\033[0;30m"
+#   define CONSOLE_COLOR_RED            "\033[0;31m"
+#   define CONSOLE_COLOR_GREEN          "\033[0;32m"
+#   define CONSOLE_COLOR_YELLOW         "\033[0;33m"
+#   define CONSOLE_COLOR_BLUE           "\033[0;34m"
+#   define CONSOLE_COLOR_PURPLE         "\033[0;35m"
+#   define CONSOLE_COLOR_CYAN           "\033[0;36m"
+#   define CONSOLE_COLOR_WHITE          "\033[0;37m"
+    
+#   define CONSOLE_COLOR_BOLD_BLACK     "\033[1;30m"
+#   define CONSOLE_COLOR_BOLD_RED       "\033[1;31m"
+#   define CONSOLE_COLOR_BOLD_GREEN     "\033[1;32m"
+#   define CONSOLE_COLOR_BOLD_YELLOW    "\033[1;33m"
+#   define CONSOLE_COLOR_BOLD_BLUE      "\033[1;34m"
+#   define CONSOLE_COLOR_BOLD_PURPLE    "\033[1;35m"
+#   define CONSOLE_COLOR_BOLD_CYAN      "\033[1;36m"
+#   define CONSOLE_COLOR_BOLD_WHITE     "\033[1;37m"
+    
+
+#else 
+
+#   define CONSOLE_COLOR_RESET          ""
+#   define CONSOLE_COLOR_CLEAR          ""
+
+#   define CONSOLE_COLOR_BLACK          ""
+#   define CONSOLE_COLOR_RED            ""
+#   define CONSOLE_COLOR_GREEN          ""
+#   define CONSOLE_COLOR_YELLOW         ""
+#   define CONSOLE_COLOR_BLUE           ""
+#   define CONSOLE_COLOR_PURPLE         ""
+#   define CONSOLE_COLOR_CYAN           ""
+#   define CONSOLE_COLOR_WHITE          ""
+
+#   define CONSOLE_COLOR_BOLD_BLACK     ""
+#   define CONSOLE_COLOR_BOLD_RED       ""
+#   define CONSOLE_COLOR_BOLD_GREEN     ""
+#   define CONSOLE_COLOR_BOLD_YELLOW    ""
+#   define CONSOLE_COLOR_BOLD_BLUE      ""
+#   define CONSOLE_COLOR_BOLD_PURPLE    ""
+#   define CONSOLE_COLOR_BOLD_CYAN      ""
+#   define CONSOLE_COLOR_BOLD_WHITE     ""
+
+#endif
+
+
+#define BRUSH_BLACK(str)        CONSOLE_COLOR_BLACK str CONSOLE_COLOR_RESET
+#define BRUSH_RED(str)          CONSOLE_COLOR_RED str CONSOLE_COLOR_RESET
+#define BRUSH_GREEN(str)        CONSOLE_COLOR_GREEN str CONSOLE_COLOR_RESET
+#define BRUSH_YELLOW(str)       CONSOLE_COLOR_YELLOW str CONSOLE_COLOR_RESET
+#define BRUSH_BLUE(str)         CONSOLE_COLOR_BLUE str CONSOLE_COLOR_RESET
+#define BRUSH_PURPLE(str)       CONSOLE_COLOR_PURPLE str CONSOLE_COLOR_RESET
+#define BRUSH_CYAN(str)         CONSOLE_COLOR_CYAN str CONSOLE_COLOR_RESET
+#define BRUSH_WHITE(str)        CONSOLE_COLOR_WHITE str CONSOLE_COLOR_RESET
+
+#define BRUSH_BOLD_BLACK(str)   CONSOLE_COLOR_BOLD_BLACK str CONSOLE_COLOR_RESET
+#define BRUSH_BOLD_RED(str)     CONSOLE_COLOR_BOLD_RED str CONSOLE_COLOR_RESET
+#define BRUSH_BOLD_GREEN(str)   CONSOLE_COLOR_BOLD_GREEN str CONSOLE_COLOR_RESET
+#define BRUSH_BOLD_YELLOW(str)  CONSOLE_COLOR_BOLD_YELLOW str CONSOLE_COLOR_RESET
+#define BRUSH_BOLD_BLUE(str)    CONSOLE_COLOR_BOLD_BLUE str CONSOLE_COLOR_RESET
+#define BRUSH_BOLD_PURPLE(str)  CONSOLE_COLOR_BOLD_PURPLE str CONSOLE_COLOR_RESET
+#define BRUSH_BOLD_CYAN(str)    CONSOLE_COLOR_BOLD_CYAN str CONSOLE_COLOR_RESET
+#define BRUSH_BOLD_WHITE(str)   CONSOLE_COLOR_BOLD_WHITE str CONSOLE_COLOR_RESET
+
+
+#endif
