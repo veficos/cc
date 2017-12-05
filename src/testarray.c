@@ -51,8 +51,6 @@ void test_array(void)
 }
 
 
-#include "xmalloc.h"
-
 int main(void)
 {
 #if defined(WINDOWS) && defined(DEBUG)

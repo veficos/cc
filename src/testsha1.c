@@ -1,6 +1,5 @@
 
 
-#include "config.h"
 #include "unittest.h"
 #include "sha1.h"
 

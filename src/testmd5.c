@@ -1,6 +1,5 @@
 
 
-#include "config.h"
 #include "unittest.h"
 #include "md5.h"
 

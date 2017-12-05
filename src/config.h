@@ -4,7 +4,7 @@
 #define __CONFIG__H__INCLUDE__
 
 
-//#define     DEBUG
+#define     DEBUG
 
 
 #if defined(DEBUG)

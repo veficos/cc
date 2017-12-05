@@ -256,6 +256,7 @@ cstring_t cstring_growzero(cstring_t cs, size_t n);
 cstring_t cstring_cat_n(cstring_t cs, const void *t, size_t len);
 cstring_t cstring_cat(cstring_t cs, const char *t);
 cstring_t cstring_cat_cs(cstring_t cs, const cstring_t t);
+cstring_t cstring_cat_char(cstring_t cs, char ch);
 cstring_t cstring_copy_n(cstring_t cs, const char *t, size_t len);
 cstring_t cstring_copy(cstring_t cs, const char *t);
 
@@ -279,6 +280,7 @@ void cstring_free_splinters(cstring_t *tokens, int count);
 void cstring_tolower(cstring_t cs);
 void cstring_toupper(cstring_t cs);
 cstring_t cstring_from_longlong(long long value);
+cstring_t cstring_from_ulonglong(unsigned long long value, int base);
 cstring_t cstring_cat_repr(cstring_t cs, const char *p, size_t len);
 cstring_t *cstring_split_args(const char *line, int *argc);
 cstring_t cstring_map_chars(cstring_t cs, const char *from, const char *to, size_t setlen);
@@ -295,6 +297,7 @@ void *cstring_alloc_ptr(cstring_t cs);
 
 int lltostr(char *s, long long value);
 int ulltostr(char *s, unsigned long long v);
+size_t xulltostr(char *s, unsigned long long v, int base);
 
 
 #endif

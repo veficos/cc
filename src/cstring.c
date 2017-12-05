@@ -369,6 +369,12 @@ cstring_t cstring_cat_cs(cstring_t dest, const cstring_t src)
 }
 
 
+cstring_t cstring_cat_char(cstring_t cs, char ch)
+{
+    return cstring_cat_n(cs, &ch, 1);
+}
+
+
 cstring_t cstring_copy_n(cstring_t cs, const char *data, size_t n)
 {
     if (cstring_alloc(cs) < n) {
@@ -448,10 +454,51 @@ int ulltostr(char *s, unsigned long long v)
 }
 
 
+size_t xulltostr(char *s, unsigned long long v, int base)
+{
+    char *p, aux, *radix="ABCDEFGHIJKLMNOPQRSTUV";
+    size_t l;
+    unsigned long long remainder;
+
+    if (base < 0 || base > 32) {
+        return 0;
+    }
+
+    p = s;
+    do {
+        remainder = (v % base);
+        *p++ = (char) ((base > 10 && remainder >= 10) ? radix[remainder-10] : '0' + remainder);
+        v /= base;
+    } while (v);
+
+    l = p - s;
+    *p = '\0';
+
+    p--;
+    while (s < p) {
+        aux = *s;
+        *s = *p;
+        *p = aux;
+        s++;
+        p--;
+    }
+
+    return l;
+}
+
+
 cstring_t cstring_from_longlong(long long value)
 {
     char buf[CSTRING_LONGLLONG_STRING_SIZE];
     int len = lltostr(buf, value);
+    return cstring_new_n(buf, len);
+}
+
+
+cstring_t cstring_from_ulonglong(unsigned long long value, int base)
+{
+    char buf[CSTRING_LONGLLONG_STRING_SIZE];
+    size_t len = xulltostr(buf, value, base);
     return cstring_new_n(buf, len);
 }
 
