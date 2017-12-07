@@ -34,7 +34,20 @@ set(TESTSHA1_FILES
         src/unittest.h
         src/testsha1.c)
 
+
+set(TESTCSPOOL_FILES
+        src/cstring.h
+        src/cstring.c
+        src/avltree.h
+        src/avltree.c
+        src/cspool.h
+        src/cspool.c
+        src/unittest.h
+        src/testcspool.c)
+
+
 add_executable(testarray ${TESTARRAY_FILES})
 add_executable(testcstring ${TESTCSTRING_FILES})
 add_executable(testmd5 ${TESTMD5_FILES})
 add_executable(testsha1 ${TESTSHA1_FILES})
+add_executable(testcspool ${TESTCSPOOL_FILES})

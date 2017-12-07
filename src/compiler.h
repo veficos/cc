@@ -15,9 +15,11 @@ enum compiler_output_type_e {
     COMPILER_OUTPUT_PREPROCESS   = 4,
 } compiler_output_type_t;
 
+
 struct compiler_s {
     compiler_output_type_t output_type;
 
 } compiler_t;
+
 
 #endif
