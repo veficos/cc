@@ -7,6 +7,8 @@
 #define     DEBUG
 
 
+
+
 #if defined(DEBUG)
 #   define     USE_MALLOC
 #endif
@@ -34,7 +36,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <malloc.h>
 #include <string.h>
 #include <stdarg.h>
 #include <stdint.h>
@@ -46,6 +47,12 @@
 #include <time.h>
 #include <stdbool.h>
 #include <limits.h>
+
+#ifdef __APPLE__
+#       include <sys/malloc.h>
+#   else
+#       include <malloc.h>
+#endif
 
 
 #ifndef bool
